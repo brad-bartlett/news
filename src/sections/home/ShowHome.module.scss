@@ -1,3 +1,15 @@
 .showHome {
   margin: 50px;
 }
+
+.articleImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.showHome__articleContainer {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+}
