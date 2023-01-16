@@ -3,8 +3,6 @@
 }
 
 .articleImage {
-  width: 200px;
-  height: 200px;
   object-fit: cover;
 }
 
@@ -12,4 +10,8 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 20px;
+}
+
+.showHome__gptArticleContainer {
+  margin-top: 50px;
 }

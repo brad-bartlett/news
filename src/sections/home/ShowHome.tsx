@@ -3,9 +3,11 @@ import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 
 import styles from "./ShowHome.module.scss";
+import { Article } from "@/types/article";
+import Image from "next/image";
 
 function ShowHome() {
-  const [article, setArticle] = useState();
+  const [article, setArticle] = useState<Article>();
   const [generatedArticle, setGeneratedArticle] = useState("");
 
   const getNews = async () => {
@@ -17,7 +19,7 @@ function ShowHome() {
     generateArticle(article);
   };
 
-  const generateArticle = async (article: any) => {
+  const generateArticle = async (article: Article) => {
     const configuration = new Configuration({
       apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
     });
@@ -25,15 +27,10 @@ function ShowHome() {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `${article.title} ${article.description}`,
+      prompt: `write an original article about ${article.title} ${article.description}`,
       temperature: 0.7,
       max_tokens: 800,
-      //   top_p: 1.0,
-      //   frequency_penalty: 0.0,
-      //   presence_penalty: 0.0,
     });
-    console.log(response);
-    console.log(response.data.choices[0].text);
     setGeneratedArticle(response.data.choices[0].text);
   };
 
@@ -45,19 +42,21 @@ function ShowHome() {
       </button>
       {article && (
         <div className={styles.showHome__articleContainer}>
-          <img
-            src={article?.urlToImage}
+          <Image
+            src={article.urlToImage}
             alt={article.title}
+            width={200}
+            height={200}
             className={styles.articleImage}
           />
           <div>
-            <h4>Article Title : {article?.title}</h4>
-            <p>Article Description: {article?.description}</p>
+            <h4>Article Title : {article.title}</h4>
+            <p>Article Description: {article.description}</p>
           </div>
         </div>
       )}
       {generatedArticle && (
-        <div style={{ marginTop: "100px" }}>
+        <div className={styles.showHome__gptArticleContainer}>
           <h4>Generated content from gpt:</h4> {generatedArticle}
         </div>
       )}
