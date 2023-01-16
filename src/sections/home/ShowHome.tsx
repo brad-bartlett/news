@@ -10,7 +10,7 @@ function ShowHome() {
 
   const getNews = async () => {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
     );
     const article = response.data.articles[0];
     setArticle(article);
@@ -19,7 +19,7 @@ function ShowHome() {
 
   const generateArticle = async (article: any) => {
     const configuration = new Configuration({
-      apiKey: process.env.REACT_APP_OPENAI_KEY,
+      apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
     });
     const openai = new OpenAIApi(configuration);
 
