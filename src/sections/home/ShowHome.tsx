@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
+import Image from "next/image";
 
 import styles from "./ShowHome.module.scss";
 import { Article } from "@/types/article";
-import Image from "next/image";
 
 function ShowHome() {
   const [article, setArticle] = useState<Article>();
