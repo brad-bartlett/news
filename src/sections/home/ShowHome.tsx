@@ -33,7 +33,7 @@ function ShowHome() {
     });
     setGeneratedArticle(response.data.choices[0].text);
   };
-
+  console.log("f");
   return (
     <div className={styles.showHome}>
       <h1>OpenAI News App</h1>
