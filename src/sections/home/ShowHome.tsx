@@ -8,7 +8,7 @@ import { Article } from "@/types/article";
 
 function ShowHome() {
   const [article, setArticle] = useState<Article>();
-  const [generatedArticle, setGeneratedArticle] = useState("");
+  const [generatedArticle, setGeneratedArticle] = useState<string>();
 
   const getNews = async () => {
     const response = await axios.get(
