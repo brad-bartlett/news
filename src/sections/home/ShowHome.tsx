@@ -6,7 +6,7 @@ import Image from "next/image";
 import styles from "./ShowHome.module.scss";
 import { Article } from "@/types/article";
 
-const ShowHome: React.FC = () => {
+function ShowHome() {
   const [article, setArticle] = useState<Article>();
   const [generatedArticle, setGeneratedArticle] = useState<string>();
 
@@ -28,7 +28,7 @@ const ShowHome: React.FC = () => {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `write an original article about ${article.title} ${article.description}`,
-      temperature: 0.9,
+      temperature: 0.8,
       max_tokens: 800,
     });
     setGeneratedArticle(response.data.choices[0].text);
@@ -61,6 +61,6 @@ const ShowHome: React.FC = () => {
       )}
     </div>
   );
-};
+}
 
 export default ShowHome;
