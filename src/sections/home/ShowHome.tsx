@@ -28,7 +28,7 @@ function ShowHome() {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `write an original article about ${article.title} ${article.description}`,
-      temperature: 0.8,
+      temperature: 0.9,
       max_tokens: 800,
     });
     setGeneratedArticle(response.data.choices[0].text);
