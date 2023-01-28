@@ -36,7 +36,7 @@ function ShowHome() {
   return (
     <div className={styles.showHome}>
       <h1>OpenAI News App</h1>
-      <button onClick={getNews} style={{ marginBottom: "50px" }}>
+      <button onClick={getNews} className={styles.showHome__button}>
         Get Headlines
       </button>
       {article && (
