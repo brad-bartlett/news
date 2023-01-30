@@ -3,13 +3,9 @@ import Head from "next/head";
 import ShowHome from "@/src/sections/home";
 import NavBar from "@/src/components";
 
-function Home() {
+function International() {
   return (
     <>
-      <Head>
-        <title>OpenAI News App</title>
-      </Head>
-      <NavBar />
       <div className="container">
         <ShowHome />
       </div>
@@ -17,4 +13,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default International;

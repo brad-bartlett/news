@@ -1,0 +1,30 @@
+.navBar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: lightgray;
+}
+
+// h1 {
+//   margin: 0;
+//   font-size: 1.5rem;
+// }
+
+.navBar__pages {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+// li {
+//   margin-left: 1rem;
+// }
+
+// a {
+//   text-decoration: none;
+//   color: black;
+//   font-size: 1.2rem;
+// }
