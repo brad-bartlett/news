@@ -1,42 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+import NavItem from "./NavItem";
 
 import styles from "./Navbar.module.scss";
 
 const items = [
   {
-    title: "Tech",
+    text: "Tech",
     href: "/tech",
   },
   {
-    title: "Business",
+    text: "Business",
     href: "/business",
   },
   {
-    title: "Sports",
+    text: "Sports",
     href: "/sports",
   },
   {
-    title: "Science",
+    text: "Science",
     href: "/science",
   },
   {
-    title: "Health",
+    text: "Health",
     href: "/health",
   },
 ];
 
 function NavBar() {
+  const [navActive, setNavActive] = useState<boolean>(false);
+  const [activeIdx, setActiveIdx] = useState<number>(-1);
+
   return (
-    <nav className={styles.navBar}>
-      <h1>NewsCorp</h1>
-      <div className={styles.navBar__pages}>
-        {items.map(({ title, href }: any) => (
-          <div className={styles.navBar__links} key={title}>
-            <a href={href}>{title}</a>
-          </div>
-        ))}
-      </div>
-    </nav>
+    <header className={styles.navBar__wrapper}>
+      <nav className={styles.navBar}>
+        <Link href={"/"}>
+          <h1>NewsCorp</h1>
+        </Link>
+        <div className={styles.nav__menu_list}>
+          {items.map((menu, idx: any) => (
+            <div
+              key={menu.text}
+              onClick={() => {
+                setActiveIdx(idx);
+                setNavActive(false);
+              }}
+            >
+              <NavItem active={activeIdx === idx} {...menu} />
+            </div>
+          ))}
+        </div>
+      </nav>
+    </header>
   );
 }
 

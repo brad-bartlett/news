@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link href="https://use.typekit.net/oha7mws.css" rel="stylesheet" />
       </Head>
-      <body style={{margin: '0px'}}>
+      <body style={{ margin: "0px" }}>
         <Main />
         <NextScript />
       </body>
