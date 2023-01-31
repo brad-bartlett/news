@@ -1,0 +1,99 @@
+@use "sass:map";
+
+// https://v5.getbootstrap.com/docs/5.0/customize/optimize/
+// Bootstrap config
+@import "~bootstrap/scss/functions.scss";
+@import "~bootstrap/scss/variables.scss";
+@import "~bootstrap/scss/mixins.scss";
+@import "~bootstrap/scss/utilities.scss";
+
+// Theming
+// Overrides need to be imported in this same file as ~bootstrap/scss/variables
+@import "./custom.scss";
+
+$text-colors: (
+  "dark-blue": $dark-blue,
+  "light-blue": $light-blue,
+  "dodger-blue": $dodger-blue,
+  "gold": $ps-gold,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-300,
+  "dark-gray": $gray-500,
+  "dark-gold": $dark-gold,
+  "inherit": inherit,
+);
+$background-colors: (
+  "eggshell": $eggshell,
+  "dark-blue": $dark-blue,
+  "white": $white,
+  "inherit": inherit,
+);
+
+// Spacing/gutter tools
+// Our gap system uses multiples of 4, and 0.4rem equals 4px
+// (can't auto generate variables in SCSS, they must be defined)
+$gap-4: 0.4rem;
+$gap-8: $gap-4 * 2;
+$gap-12: $gap-4 * 3;
+$gap-16: $gap-4 * 4;
+$gap-20: $gap-4 * 5;
+$gap-24: $gap-4 * 6;
+$gap-28: $gap-4 * 7;
+$gap-32: $gap-4 * 8;
+$gap-36: $gap-4 * 9;
+$gap-40: $gap-4 * 10;
+$gap-44: $gap-4 * 11;
+$gap-48: $gap-4 * 12;
+$gap-52: $gap-4 * 13;
+$gap-56: $gap-4 * 14;
+$gap-60: $gap-4 * 15;
+$gap-64: $gap-4 * 16;
+$gap-68: $gap-4 * 17;
+$gap-72: $gap-4 * 18;
+$gap-76: $gap-4 * 19;
+$gap-80: $gap-4 * 20;
+$gap-84: $gap-4 * 21;
+$gap-88: $gap-4 * 22;
+$gap-92: $gap-4 * 23;
+$gap-96: $gap-4 * 24;
+$gap-100: $gap-4 * 25;
+$gap-104: $gap-4 * 26;
+$gap-108: $gap-4 * 27;
+$gap-112: $gap-4 * 28;
+$gap-116: $gap-4 * 29;
+$gap-120: $gap-4 * 30;
+
+// Put gaps in a map so they can be easily looped over
+$gaps: (
+  "4": $gap-4,
+  "8": $gap-8,
+  "12": $gap-12,
+  "16": $gap-16,
+  "20": $gap-20,
+  "24": $gap-24,
+  "28": $gap-28,
+  "32": $gap-32,
+  "36": $gap-36,
+  "40": $gap-40,
+  "44": $gap-44,
+  "48": $gap-48,
+  "52": $gap-52,
+  "56": $gap-56,
+  "60": $gap-60,
+  "64": $gap-64,
+  "68": $gap-68,
+  "72": $gap-72,
+  "76": $gap-76,
+  "80": $gap-80,
+  "84": $gap-84,
+  "88": $gap-88,
+  "92": $gap-92,
+  "96": $gap-96,
+  "100": $gap-100,
+  "104": $gap-104,
+  "108": $gap-108,
+  "112": $gap-112,
+  "116": $gap-116,
+  "120": $gap-120,
+);

@@ -1,0 +1,9 @@
+// Base utilities and theme tools
+@import "./utilities.scss";
+
+// Bootstrap helpers and utilities
+@import "~bootstrap/scss/helpers.scss";
+@import "~bootstrap/scss/utilities/api.scss";
+
+// TPS global styles
+@import "global.scss";

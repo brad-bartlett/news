@@ -10,9 +10,7 @@ function Home() {
         <title>OpenAI News App</title>
       </Head>
       <NavBar />
-      <div className="container">
-        <ShowHome />
-      </div>
+      <ShowHome />
     </>
   );
 }
