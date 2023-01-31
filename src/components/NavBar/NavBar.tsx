@@ -4,16 +4,24 @@ import styles from "./Navbar.module.scss";
 
 const items = [
   {
-    title: "US",
-    href: "/us",
+    title: "Tech",
+    href: "/tech",
   },
   {
-    title: "International",
-    href: "/international",
+    title: "Business",
+    href: "/business",
   },
   {
     title: "Sports",
     href: "/sports",
+  },
+  {
+    title: "Science",
+    href: "/science",
+  },
+  {
+    title: "Health",
+    href: "/health",
   },
 ];
 
@@ -21,13 +29,13 @@ function NavBar() {
   return (
     <nav className={styles.navBar}>
       <h1>NewsCorp</h1>
-      <ul className={styles.navBar__pages}>
+      <div className={styles.navBar__pages}>
         {items.map(({ title, href }: any) => (
-          <li key={title}>
+          <div className={styles.navBar__links} key={title}>
             <a href={href}>{title}</a>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </nav>
   );
 }

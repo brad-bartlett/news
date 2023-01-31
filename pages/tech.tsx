@@ -3,16 +3,16 @@ import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 import Image from "next/image";
 
-import styles from "./ShowHome.module.scss";
+import styles from "../src/sections/home/ShowHome.module.scss";
 import { Article } from "@/types/article";
 
-function ShowHome() {
+function Tech() {
   const [article, setArticle] = useState<Article>();
   const [generatedArticle, setGeneratedArticle] = useState<string>();
 
   const getNews = async () => {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
+      `https://newsapi.org/v2/top-headlines?category=technology&country=us&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
     );
     const article = response.data.articles[0];
     setArticle(article);
@@ -35,7 +35,7 @@ function ShowHome() {
   };
   return (
     <div className={styles.showHome}>
-      <h1>Welcome to NewsCorp</h1>
+      <h1>Tech News</h1>
       <button onClick={getNews} className={styles.showHome__button}>
         Get Headlines
       </button>
@@ -63,4 +63,4 @@ function ShowHome() {
   );
 }
 
-export default ShowHome;
+export default Tech;

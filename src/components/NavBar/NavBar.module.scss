@@ -1,0 +1,24 @@
+.navBar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: lightgray;
+}
+
+.navBar__pages {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: 1fr;
+  text-decoration: none;
+}
+
+.navBar__links {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
