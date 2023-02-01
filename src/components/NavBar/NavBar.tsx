@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavItem from "./NavItem";
 
 import styles from "./Navbar.module.scss";
+import { memoryUsage } from "process";
 
 const items = [
   {
@@ -44,7 +45,11 @@ function NavBar() {
                 setActiveIdx(idx);
               }}
             >
-              <NavItem active={activeIdx === idx} {...menu} />
+              <NavItem
+                active={activeIdx === idx}
+                text={menu.text}
+                href={menu.href}
+              />
             </div>
           ))}
         </div>
