@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 import Image from "next/image";
+import GeneratedArticle from "@/src/components/GeneratedArticle";
 
 import styles from "../src/sections/home/ShowHome.module.scss";
 import { Article } from "@/types/article";
@@ -55,9 +56,7 @@ function Tech() {
         </div>
       )}
       {generatedArticle && (
-        <div className={styles.showHome__gptArticleContainer}>
-          <h4>Generated content from gpt:</h4> {generatedArticle}
-        </div>
+        <GeneratedArticle generatedArticle={generatedArticle} />
       )}
     </div>
   );

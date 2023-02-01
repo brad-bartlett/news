@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import styles from "../src/sections/home/ShowHome.module.scss";
 import { Article } from "@/types/article";
+import GeneratedArticle from "@/src/components/GeneratedArticle";
 
 function Science() {
   const [article, setArticle] = useState<Article>();
@@ -55,9 +56,7 @@ function Science() {
         </div>
       )}
       {generatedArticle && (
-        <div className={styles.showHome__gptArticleContainer}>
-          <h4>Generated content from gpt:</h4> {generatedArticle}
-        </div>
+        <GeneratedArticle generatedArticle={generatedArticle} />
       )}
     </div>
   );
