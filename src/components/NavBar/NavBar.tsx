@@ -28,8 +28,7 @@ const items = [
 ];
 
 function NavBar() {
-  const [navActive, setNavActive] = useState<boolean>(false);
-  const [activeIdx, setActiveIdx] = useState<number>(-1);
+  const [activeIdx, setActiveIdx] = useState(null);
 
   return (
     <header className={styles.navBar__wrapper}>
@@ -43,7 +42,6 @@ function NavBar() {
               key={menu.text}
               onClick={() => {
                 setActiveIdx(idx);
-                setNavActive(false);
               }}
             >
               <NavItem active={activeIdx === idx} {...menu} />
