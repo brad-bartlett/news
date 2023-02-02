@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
-import Image from "next/image";
 
-import styles from "./ShowHome.module.scss";
 import { ArticleProps } from "@/types/ArticleProps";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 import Article from "@/src/components/Article";
 import Button from "@/src/commons/Button";
+import Header from "@/src/commons/Header";
 
 function ShowHome() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -37,8 +36,8 @@ function ShowHome() {
     setGeneratedArticle(response.data.choices[0].text);
   };
   return (
-    <div className={styles.showHome}>
-      <h1>Welcome to NewsCorp</h1>
+    <>
+      <Header text="Welcome to NewsCorp" />
       <Button onClick={getNews} text="Get Headline" />
       {article && (
         <Article
@@ -50,7 +49,7 @@ function ShowHome() {
       {generatedArticle && (
         <GeneratedArticle generatedArticle={generatedArticle} />
       )}
-    </div>
+    </>
   );
 }
 

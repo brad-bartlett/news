@@ -29,11 +29,11 @@ function NavBar() {
   const [activeIdx, setActiveIdx] = useState(null);
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-400">
+    <nav className="flex items-center justify-between p-4 bg-gray-500">
       <Link href={"/"}>
         <h1 className="text-white font-bold ml-2">NewsCorp</h1>
       </Link>
-      <div className="flex items-center space-x-5">
+      <div className="flex items-center space-x-7">
         {items.map((menu, idx: any) => (
           <div
             key={menu.text}
