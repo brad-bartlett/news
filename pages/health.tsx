@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 
-import styles from "../src/sections/home/ShowHome.module.scss";
 import { ArticleProps } from "@/types/ArticleProps";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 import Article from "@/src/components/Article";
+import Header from "@/src/commons/Header";
+import Button from "@/src/commons/Button";
 
 function Health() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -35,11 +36,9 @@ function Health() {
     setGeneratedArticle(response.data.choices[0].text);
   };
   return (
-    <div className={styles.showHome}>
-      <h1>Health News</h1>
-      <button onClick={getNews} className={styles.showHome__button}>
-        Get Headlines
-      </button>
+    <>
+      <Header text="Health News" />
+      <Button onClick={getNews} text="Get headline" />
       {article && (
         <Article
           urlToImage={article.urlToImage}
@@ -50,7 +49,7 @@ function Health() {
       {generatedArticle && (
         <GeneratedArticle generatedArticle={generatedArticle} />
       )}
-    </div>
+    </>
   );
 }
 
