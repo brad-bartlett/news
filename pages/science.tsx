@@ -7,6 +7,7 @@ import GeneratedArticle from "@/src/components/GeneratedArticle";
 import Article from "@/src/components/Article";
 import Header from "@/src/commons/Header";
 import Button from "@/src/commons/Button";
+import PageWrapper from "@/src/commons/PageWrapper";
 
 function Science() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -36,7 +37,7 @@ function Science() {
     setGeneratedArticle(response.data.choices[0].text);
   };
   return (
-    <>
+    <PageWrapper>
       <Header text="Science News" />
       <Button onClick={getNews} text="Get headline" />
       {article && (
@@ -49,7 +50,7 @@ function Science() {
       {generatedArticle && (
         <GeneratedArticle generatedArticle={generatedArticle} />
       )}
-    </>
+    </PageWrapper>
   );
 }
 

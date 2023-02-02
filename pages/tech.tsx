@@ -7,6 +7,7 @@ import Article from "@/src/components/Article";
 import { ArticleProps } from "@/types/ArticleProps";
 import Header from "@/src/commons/Header";
 import Button from "@/src/commons/Button";
+import PageWrapper from "@/src/commons/PageWrapper";
 
 function Tech() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -37,7 +38,7 @@ function Tech() {
   };
 
   return (
-    <>
+    <PageWrapper>
       <Header text="Tech News" />
       <Button onClick={getNews} text="Get headline" />
       {article && (
@@ -50,7 +51,7 @@ function Tech() {
       {generatedArticle && (
         <GeneratedArticle generatedArticle={generatedArticle} />
       )}
-    </>
+    </PageWrapper>
   );
 }
 
