@@ -7,6 +7,7 @@ import styles from "./ShowHome.module.scss";
 import { ArticleProps } from "@/types/ArticleProps";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 import Article from "@/src/components/Article";
+import Button from "@/src/commons/Button";
 
 function ShowHome() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -38,9 +39,7 @@ function ShowHome() {
   return (
     <div className={styles.showHome}>
       <h1>Welcome to NewsCorp</h1>
-      <button onClick={getNews} className={styles.showHome__button}>
-        Get Headlines
-      </button>
+      <Button onClick={getNews} text="Get Headline" />
       {article && (
         <Article
           urlToImage={article.urlToImage}

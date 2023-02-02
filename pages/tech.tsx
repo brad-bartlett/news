@@ -36,7 +36,6 @@ function Tech() {
     setGeneratedArticle(response.data.choices[0].text);
   };
 
-  console.log({ article });
   return (
     <div className={styles.showHome}>
       <h1>Tech News</h1>
