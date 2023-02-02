@@ -29,7 +29,7 @@ function NavBar() {
   const [activeIdx, setActiveIdx] = useState(null);
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-500">
+    <nav className="flex items-center justify-between p-4 bg-gray-500 shadow-md">
       <Link href={"/"}>
         <h1 className="text-white font-bold ml-2">NewsCorp</h1>
       </Link>
