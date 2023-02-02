@@ -1,15 +1,14 @@
 import React from "react";
 
-import styles from "./GeneratedArticle.module.scss";
-
 interface GeneratedArticleProps {
   generatedArticle: string;
 }
 
 function GeneratedArticle({ generatedArticle }: GeneratedArticleProps) {
   return (
-    <div className={styles.generatedArticle}>
-      <h4>Generated content from gpt:</h4> {generatedArticle}
+    <div className="m-8">
+      <h4 className="font-bold pb-2">Generated content from gpt:</h4>
+      {generatedArticle}
     </div>
   );
 }
