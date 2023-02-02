@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import ShowHome from "@/src/sections/home";
 import NavBar from "@/src/components/NavBar";
+import PageWrapper from "@/src/commons/PageWrapper";
 
 function Home() {
   return (
@@ -10,7 +11,9 @@ function Home() {
         <title>NewsCorp</title>
       </Head>
       <NavBar />
-      <ShowHome />
+      <PageWrapper>
+        <ShowHome />
+      </PageWrapper>
     </>
   );
 }
