@@ -6,6 +6,7 @@ import GeneratedArticle from "@/src/components/GeneratedArticle";
 import Article from "@/src/components/Article";
 import { ArticleProps } from "@/types/ArticleProps";
 import Header from "@/src/commons/Header";
+import Button from "@/src/commons/Button";
 
 function Tech() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -38,7 +39,7 @@ function Tech() {
   return (
     <>
       <Header text="Tech News" />
-      <button onClick={getNews}>Get Headlines</button>
+      <Button onClick={getNews} text="Get headline" />
       {article && (
         <Article
           urlToImage={article.urlToImage}

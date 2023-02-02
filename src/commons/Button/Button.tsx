@@ -1,6 +1,4 @@
 import React from "react";
-import styles from "./Button.module.scss";
-
 interface ButtonProps {
   text: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -18,11 +16,18 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, href }) => {
   };
 
   return href ? (
-    <a className={styles.button} href={href} onClick={handleClick}>
+    <a
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4  rounded"
+      href={href}
+      onClick={handleClick}
+    >
       {text}
     </a>
   ) : (
-    <button className={styles.button} onClick={onClick}>
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4  rounded"
+      onClick={onClick}
+    >
       {text}
     </button>
   );
