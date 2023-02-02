@@ -3,7 +3,6 @@ import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 
-// import styles from "../src/sections/home/ShowHome.module.scss";
 import Article from "@/src/components/Article";
 import { ArticleProps } from "@/types/ArticleProps";
 import Header from "@/src/commons/Header";
@@ -37,7 +36,7 @@ function Tech() {
   };
 
   return (
-    <div>
+    <>
       <Header text="Tech News" />
       <button onClick={getNews}>Get Headlines</button>
       {article && (
@@ -50,7 +49,7 @@ function Tech() {
       {generatedArticle && (
         <GeneratedArticle generatedArticle={generatedArticle} />
       )}
-    </div>
+    </>
   );
 }
 

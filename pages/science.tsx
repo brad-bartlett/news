@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
-import Image from "next/image";
 
 import styles from "../src/sections/home/ShowHome.module.scss";
 import { ArticleProps } from "@/types/ArticleProps";
