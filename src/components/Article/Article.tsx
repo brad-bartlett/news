@@ -2,18 +2,16 @@ import React from "react";
 import Image from "next/image";
 import { ArticleProps } from "@/types/ArticleProps";
 
-import styles from "./Article.module.scss";
-
 function Article({ urlToImage, title, description }: ArticleProps) {
   return (
-    <div className={styles.article}>
+    <div className="grid grid-flow-col gap-6 grid-rows-1">
       {urlToImage && (
         <Image
           src={urlToImage}
           alt={title}
           width={200}
           height={200}
-          className={styles.article__image}
+          objectFit="cover"
         />
       )}
       <div>
