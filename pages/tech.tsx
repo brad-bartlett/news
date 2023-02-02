@@ -38,7 +38,7 @@ function Tech() {
 
   return (
     <div className={styles.showHome}>
-      <h1>Tech News</h1>
+      <h1 className="text-3xl font-bold underline">Tech News</h1>
       <button onClick={getNews} className={styles.showHome__button}>
         Get Headlines
       </button>

@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, href }) => {
       {text}
     </a>
   ) : (
-    <button className="Button" onClick={onClick}>
+    <button className={styles.button} onClick={onClick}>
       {text}
     </button>
   );
