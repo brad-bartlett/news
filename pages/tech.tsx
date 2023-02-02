@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
-import Image from "next/image";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 
-import styles from "../src/sections/home/ShowHome.module.scss";
+// import styles from "../src/sections/home/ShowHome.module.scss";
 import Article from "@/src/components/Article";
 import { ArticleProps } from "@/types/ArticleProps";
+import Header from "@/src/commons/Header";
 
 function Tech() {
   const [article, setArticle] = useState<ArticleProps>();
@@ -37,11 +37,9 @@ function Tech() {
   };
 
   return (
-    <div className={styles.showHome}>
-      <h1 className="text-3xl font-bold underline">Tech News</h1>
-      <button onClick={getNews} className={styles.showHome__button}>
-        Get Headlines
-      </button>
+    <div>
+      <Header text="Tech News" />
+      <button onClick={getNews}>Get Headlines</button>
       {article && (
         <Article
           urlToImage={article.urlToImage}
