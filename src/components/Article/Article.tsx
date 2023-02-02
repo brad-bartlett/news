@@ -4,7 +4,7 @@ import { ArticleProps } from "@/types/ArticleProps";
 
 function Article({ urlToImage, title, description }: ArticleProps) {
   return (
-    <div className="grid grid-flow-col gap-6 grid-rows-1">
+    <div className="grid grid-flow-col gap-6 grid-rows-1 m-8">
       {urlToImage && (
         <Image
           src={urlToImage}
