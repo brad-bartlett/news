@@ -4,10 +4,12 @@ import { Configuration, OpenAIApi } from "openai";
 import Image from "next/image";
 
 import styles from "./ShowHome.module.scss";
-import { Article } from "@/types/article";
+import { ArticleProps } from "@/types/ArticleProps";
+import GeneratedArticle from "@/src/components/GeneratedArticle";
+import Article from "@/src/components/Article";
 
 function ShowHome() {
-  const [article, setArticle] = useState<Article>();
+  const [article, setArticle] = useState<ArticleProps>();
   const [generatedArticle, setGeneratedArticle] = useState<string>();
 
   const getNews = async () => {
@@ -19,7 +21,7 @@ function ShowHome() {
     generateArticle(article);
   };
 
-  const generateArticle = async (article: Article) => {
+  const generateArticle = async (article: ArticleProps) => {
     const configuration = new Configuration({
       apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
     });
@@ -40,24 +42,14 @@ function ShowHome() {
         Get Headlines
       </button>
       {article && (
-        <div className={styles.showHome__articleContainer}>
-          <Image
-            src={article.urlToImage}
-            alt={article.title}
-            width={200}
-            height={200}
-            className={styles.articleImage}
-          />
-          <div>
-            <h4>Article Title : {article.title}</h4>
-            <p>Article Description: {article.description}</p>
-          </div>
-        </div>
+        <Article
+          urlToImage={article.urlToImage}
+          title={article.title}
+          description={article.description}
+        />
       )}
       {generatedArticle && (
-        <div className={styles.showHome__gptArticleContainer}>
-          <h4>Generated content from gpt:</h4> {generatedArticle}
-        </div>
+        <GeneratedArticle generatedArticle={generatedArticle} />
       )}
     </div>
   );
