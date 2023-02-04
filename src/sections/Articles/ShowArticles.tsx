@@ -1,9 +1,9 @@
 import React from "react";
-import Article from "@/src/components/Article";
+import ArticleCard from "@/src/commons/ArticleCard";
 
 interface NewsStoryProps {
   title: string;
-  imageUrl: string;
+  urlToImage: string;
   description: string;
 }
 
@@ -13,12 +13,12 @@ interface NewsStoriesProps {
 
 function ShowArticles({ stories }: NewsStoriesProps) {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section className="grid grid-cols-4 gap-4">
       {stories.map((story, index) => (
-        <Article
+        <ArticleCard
           key={index}
           title={story.title}
-          imageUrl={story.imageUrl}
+          urlToImage={story.urlToImage}
           description={story.description}
         />
       ))}

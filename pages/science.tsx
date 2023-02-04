@@ -42,7 +42,7 @@ function Science() {
       <Button onClick={getNews} text="Get headline" />
       {article && (
         <Article
-          imageUrl={article.imageUrl}
+          urlToImage={article.urlToImage}
           title={article.title}
           description={article.description}
         />
