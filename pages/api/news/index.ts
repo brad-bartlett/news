@@ -28,7 +28,7 @@ async function handler(req: any, res: any) {
 
 export default handler;
 
-// export const config = {
-//   type: "experimental-scheduled",
-//   schedule: "@hourly",
-// };
+export const config = {
+  type: "experimental-scheduled",
+  schedule: "@hourly",
+};
