@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
-import { getStory } from "./api/news";
+import { getArticles } from "./api/news";
 
 import Article from "@/src/components/Article";
 import { ArticleProps } from "@/types/ArticleProps";
 import Header from "@/src/commons/Header";
-import Button from "@/src/commons/Button";
 import PageWrapper from "@/src/commons/PageWrapper";
 
-function Tech({ article }: any) {
+function Tech({ articles }: any) {
   const [generatedArticle, setGeneratedArticle] = useState<string>();
 
-  console.log({ article });
   const generateArticle = async (article: ArticleProps) => {
     const configuration = new Configuration({
       apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
@@ -31,12 +29,11 @@ function Tech({ article }: any) {
   return (
     <PageWrapper>
       <Header text="Tech News" />
-      {/* <Button onClick={generateArticle(article)} text="Get headline" /> */}
-      {article && (
+      {articles && (
         <Article
-          urlToImage={article.urlToImage}
-          title={article.title}
-          description={article.description}
+          urlToImage={articles[0].urlToImage}
+          title={articles[0].title}
+          description={articles[0].description}
         />
       )}
       {generatedArticle && (
@@ -47,10 +44,9 @@ function Tech({ article }: any) {
 }
 
 export async function getStaticProps() {
-  const tech = "technology";
-  const article = await getStory(tech);
+  const articles = await getArticles("technology");
 
-  if (!article) {
+  if (!articles) {
     return {
       props: {
         error: "No articles were found",
@@ -59,7 +55,7 @@ export async function getStaticProps() {
   }
   return {
     props: {
-      article,
+      articles,
     },
     revalidate: 20,
   };

@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export const getStory = async (category: string) => {
+export const getArticles = async (category: string) => {
   try {
     const response = await axios.get(
       `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
     );
-    const article = response.data.articles[0];
+    const articles = response.data.articles;
 
-    return article;
+    return articles;
   } catch (error) {
     console.error(`An error occurred while fetching the story: ${error}`);
     return error;
@@ -16,7 +16,7 @@ export const getStory = async (category: string) => {
 
 async function handler(req: any, res: any) {
   const category = req.query.category || "tech";
-  const response = await getStory(category);
+  const response = await getArticles(category);
 
   // Something went wrong with the request
   if (response instanceof Error) {
