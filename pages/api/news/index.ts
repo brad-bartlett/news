@@ -15,7 +15,7 @@ export const getArticles = async (category: string) => {
 };
 
 async function handler(req: any, res: any) {
-  const category = req.query.category || "tech";
+  const category = req.query.category || "general";
   const response = await getArticles(category);
 
   // Something went wrong with the request
