@@ -5,7 +5,7 @@ interface HeaderProps {
 }
 
 function Header({ text }: HeaderProps) {
-  return <h1 className="font-bold text-3xl my-4">{text}</h1>;
+  return <h1 className="font-bold text-3xl my-8">{text}</h1>;
 }
 
 export default Header;

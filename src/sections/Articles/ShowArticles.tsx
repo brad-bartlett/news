@@ -12,7 +12,7 @@ interface NewsStoriesProps {
 
 function ShowArticles({ articles }: NewsStoriesProps) {
   return (
-    <section className="grid grid-cols-4 gap-4">
+    <section className="grid grid-cols-3 gap-4">
       {articles.map((article, index) => (
         <ArticleCard
           key={index}
