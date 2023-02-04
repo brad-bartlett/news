@@ -8,18 +8,18 @@ interface NewsStoryProps {
 }
 
 interface NewsStoriesProps {
-  stories: NewsStoryProps[];
+  articles: NewsStoryProps[];
 }
 
-function ShowArticles({ stories }: NewsStoriesProps) {
+function ShowArticles({ articles }: NewsStoriesProps) {
   return (
     <section className="grid grid-cols-4 gap-4">
-      {stories.map((story, index) => (
+      {articles.map((article, index) => (
         <ArticleCard
           key={index}
-          title={story.title}
-          urlToImage={story.urlToImage}
-          description={story.description}
+          title={article.title}
+          urlToImage={article.urlToImage}
+          description={article.description}
         />
       ))}
     </section>
