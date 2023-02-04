@@ -1,15 +1,13 @@
 import axios from "axios";
 
-const getStory = async () => {
+export const getStory = async (category: string) => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
     );
-    const story = response.data.articles[0];
+    const article = response.data.articles[0];
 
-    console.log({ story });
-
-    return story;
+    return article;
   } catch (error) {
     console.error(`An error occurred while fetching the story: ${error}`);
     return error;
@@ -17,7 +15,8 @@ const getStory = async () => {
 };
 
 async function handler(req: any, res: any) {
-  const response = await getStory();
+  const category = req.query.category || "tech";
+  const response = await getStory(category);
 
   // Something went wrong with the request
   if (response instanceof Error) {
@@ -29,7 +28,7 @@ async function handler(req: any, res: any) {
 
 export default handler;
 
-export const config = {
-  type: "experimental-scheduled",
-  schedule: "@hourly",
-};
+// export const config = {
+//   type: "experimental-scheduled",
+//   schedule: "@hourly",
+// };
