@@ -3,18 +3,22 @@ import Image from "next/image";
 
 interface ArticleCardProps {
   title: string;
-  urlToImage: string;
-  description: string;
+  urlToImage?: string;
 }
 
-function ArticleCard({ title, urlToImage, description }: ArticleCardProps) {
+function ArticleCard({ title, urlToImage }: ArticleCardProps) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="grid grid-rows-2 place-content-center">
       {urlToImage && (
-        <Image src={urlToImage} width={200} height={200} alt={title} />
+        <Image
+          src={urlToImage}
+          width={200}
+          height={200}
+          alt={title}
+          objectFit="cover"
+        />
       )}
-      <h2 className="text-lg font-bold mt-4">{title}</h2>
-      <p className="text-gray-700 mt-2">{description}</p>
+      <h2 className="text-lg font-bold">{title}</h2>
     </div>
   );
 }

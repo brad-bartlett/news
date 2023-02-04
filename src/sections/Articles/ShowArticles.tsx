@@ -4,7 +4,6 @@ import ArticleCard from "@/src/commons/ArticleCard";
 interface NewsStoryProps {
   title: string;
   urlToImage: string;
-  description: string;
 }
 
 interface NewsStoriesProps {
@@ -19,7 +18,6 @@ function ShowArticles({ articles }: NewsStoriesProps) {
           key={index}
           title={article.title}
           urlToImage={article.urlToImage}
-          description={article.description}
         />
       ))}
     </section>
