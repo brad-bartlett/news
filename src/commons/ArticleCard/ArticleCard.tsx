@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-interface NewsStoryProps {
+interface ArticleCardProps {
   title: string;
   imageUrl: string;
   description: string;
 }
 
-function NewsStory({ title, imageUrl, description }: NewsStoryProps) {
+function ArticleCard({ title, imageUrl, description }: ArticleCardProps) {
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -19,4 +19,4 @@ function NewsStory({ title, imageUrl, description }: NewsStoryProps) {
   );
 }
 
-export default NewsStory;
+export default ArticleCard;
