@@ -42,7 +42,7 @@ function Business() {
       <Button onClick={getNews} text="Get headline" />
       {article && (
         <Article
-          urlToImage={article.urlToImage}
+          imageUrl={article.imageUrl}
           title={article.title}
           description={article.description}
         />

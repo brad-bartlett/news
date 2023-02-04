@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { ArticleProps } from "@/types/ArticleProps";
 
-function Article({ urlToImage, title, description }: ArticleProps) {
+function Article({ imageUrl, title, description }: ArticleProps) {
   return (
     <div className="grid grid-flow-col gap-6 grid-rows-1">
-      {urlToImage && (
+      {imageUrl && (
         <Image
-          src={urlToImage}
+          src={imageUrl}
           alt={title}
           width={200}
           height={200}

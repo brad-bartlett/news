@@ -31,7 +31,7 @@ function Tech({ articles }: any) {
       <Header text="Tech News" />
       {articles && (
         <Article
-          urlToImage={articles[0].urlToImage}
+          imageUrl={articles[0].imageUrl}
           title={articles[0].title}
           description={articles[0].description}
         />
