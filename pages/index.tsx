@@ -13,7 +13,7 @@ function Home({ articles }: { articles: ArticleProps[] }) {
 }
 
 export async function getStaticProps() {
-  const articles = await getArticles("technology");
+  const articles = await getArticles("general");
 
   if (!articles) {
     return {
