@@ -1,15 +1,21 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 interface ArticleCardProps {
   title: string;
   urlToImage?: string;
+  id?: number;
 }
 
-function ArticleCard({ title, urlToImage }: ArticleCardProps) {
+function ArticleCard({ title, urlToImage, id }: ArticleCardProps) {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/articles/[...title]", `/articles/${title}`);
+  };
   return (
     <div className="grid grid-flow-row auto-rows-min">
-      <div>
+      <div onClick={handleClick}>
         {urlToImage ? (
           <Image
             src={urlToImage}
