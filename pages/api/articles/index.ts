@@ -11,7 +11,7 @@ export const getGeneratedArticle = async (article: ArticleProps) => {
     const generatedArticle = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `write an original article about ${article.title} ${article.description}`,
-      temperature: 0.9,
+      temperature: 0.8,
       max_tokens: 800,
     });
 
