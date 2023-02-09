@@ -1,9 +1,9 @@
 import React from "react";
-import { getArticles } from "../api/news";
+import { getArticles } from "../../api/news";
 
 import Header from "@/src/commons/Header";
 import PageWrapper from "@/src/commons/PageWrapper";
-import { getGeneratedArticle } from "../api/articles";
+import { getGeneratedArticle } from "../../api/articles";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 
 function ArticlePage({ article }: any) {
