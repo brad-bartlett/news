@@ -1,16 +1,19 @@
 import React from "react";
-import { getArticles } from "../../api/news";
-
 import Header from "@/src/commons/Header";
 import PageWrapper from "@/src/commons/PageWrapper";
-import { getGeneratedArticle } from "../../api/articles";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
 
-function ArticlePage({ article }: any) {
+function ArticlePage() {
+  const title = sessionStorage.getItem("title");
+  const description = sessionStorage.getItem("description");
   return (
     <PageWrapper>
       <Header text="Article Page" />
-      {article && <GeneratedArticle generatedArticle={article} />}
+      {/* {title && <h1>{title}</h1>}
+      {description && <h1>{description}</h1>} */}
+      {title && description && (
+        <GeneratedArticle title={title} description={description} />
+      )}
     </PageWrapper>
   );
 }
@@ -27,22 +30,22 @@ function ArticlePage({ article }: any) {
 //   return { paths, fallback: "blocking" };
 // }
 
-export async function getStaticProps(context: any) {
-  const article = await getGeneratedArticle(context.query.slug);
+// export async function getStaticProps(context: any) {
+//   const article = await getGeneratedArticle(context.query.slug);
 
-  if (!article) {
-    return {
-      props: {
-        error: "No articles were found",
-      },
-    };
-  }
-  return {
-    props: {
-      article,
-    },
-    revalidate: 20,
-  };
-}
+//   if (!article) {
+//     return {
+//       props: {
+//         error: "No articles were found",
+//       },
+//     };
+//   }
+//   return {
+//     props: {
+//       article,
+//     },
+//     revalidate: 20,
+//   };
+// }
 
 export default ArticlePage;

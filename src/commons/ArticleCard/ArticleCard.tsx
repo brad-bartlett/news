@@ -1,27 +1,35 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface ArticleCardProps {
-  title: string;
-  urlToImage?: string;
-  id?: number;
+  article: any;
 }
 
-function ArticleCard({ title, urlToImage, id }: ArticleCardProps) {
-  const router = useRouter();
-  const handleClick = () => {
-    router.push("/articles/[...title]", `/articles/${title}`);
+function ArticleCard({ article }: ArticleCardProps) {
+  // const router = useRouter();
+  // const handleClick = () => {
+  //   router.push({
+  //     pathname: "/articles/[title]",
+  //     query: { category: "general" },
+  //   });
+  // };
+
+  // console.log({ router });
+
+  const storeData = () => {
+    sessionStorage.setItem("title", article.title);
+    sessionStorage.setItem("description", article.description);
   };
   return (
     <div className="grid grid-flow-row auto-rows-min">
-      <div onClick={handleClick}>
-        {urlToImage ? (
+      <Link onClick={storeData} href={`/articles/${article.title}`}>
+        {article.urlToImage ? (
           <Image
-            src={urlToImage}
+            src={article.urlToImage}
             width={176}
             height={176}
-            alt={title}
+            alt={article.title}
             className="rounded-lg w-full h-44"
           />
         ) : (
@@ -29,12 +37,12 @@ function ArticleCard({ title, urlToImage, id }: ArticleCardProps) {
             src="https://images.unsplash.com/photo-1626808936965-121820669d25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1758&q=80"
             width={176}
             height={176}
-            alt={title}
+            alt={article.title}
             className="rounded-lg w-full h-44"
           />
         )}
-      </div>
-      <h2 className="text-lg font-bold text-ellipsis">{title}</h2>
+        <h2 className="text-lg font-bold text-ellipsis">{article.title}</h2>
+      </Link>
     </div>
   );
 }
