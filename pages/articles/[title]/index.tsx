@@ -9,8 +9,6 @@ function ArticlePage() {
   return (
     <PageWrapper>
       <Header text="Article Page" />
-      {/* {title && <h1>{title}</h1>}
-      {description && <h1>{description}</h1>} */}
       {title && description && (
         <GeneratedArticle title={title} description={description} />
       )}
