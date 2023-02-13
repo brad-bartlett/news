@@ -28,7 +28,6 @@ function GeneratedArticle({ title, description }: any) {
     generateArticle();
   }, [generateArticle]);
 
-  console.log({ generateArticle });
   return (
     <>
       <h4 className="font-bold pb-2">Generated content from gpt:</h4>
