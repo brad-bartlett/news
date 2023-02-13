@@ -16,34 +16,4 @@ function ArticlePage() {
   );
 }
 
-// export async function getStaticPaths() {
-//   const categoryData = await getGameCategories();
-//   // Set up static paths
-//   const paths = categoryData.map((category) => ({
-//     params: { category: category.slug },
-//   }));
-
-//   // If the path isn't generated, attempt to do so before showing the user the page
-//   // https://nextjs.org/docs/basic-features/data-fetching#fallback-pages
-//   return { paths, fallback: "blocking" };
-// }
-
-// export async function getStaticProps(context: any) {
-//   const article = await getGeneratedArticle(context.query.slug);
-
-//   if (!article) {
-//     return {
-//       props: {
-//         error: "No articles were found",
-//       },
-//     };
-//   }
-//   return {
-//     props: {
-//       article,
-//     },
-//     revalidate: 20,
-//   };
-// }
-
 export default ArticlePage;
