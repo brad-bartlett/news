@@ -7,16 +7,6 @@ interface ArticleCardProps {
 }
 
 function ArticleCard({ article }: ArticleCardProps) {
-  // const router = useRouter();
-  // const handleClick = () => {
-  //   router.push({
-  //     pathname: "/articles/[title]",
-  //     query: { category: "general" },
-  //   });
-  // };
-
-  // console.log({ router });
-
   const storeData = () => {
     sessionStorage.setItem("title", article.title);
     sessionStorage.setItem("description", article.description);
