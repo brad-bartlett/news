@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Configuration, OpenAIApi } from "openai";
 
-function GeneratedArticle({ title, description }: any) {
+interface GeneratedArticleProps {
+  title: string;
+  description: string;
+}
+
+function GeneratedArticle({ title, description }: GeneratedArticleProps) {
   const [generatedArticle, setGeneratedArticle] = useState("");
   const generateArticle = useCallback(async () => {
     try {
