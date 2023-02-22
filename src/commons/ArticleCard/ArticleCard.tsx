@@ -2,11 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface ArticleCardProps {
-  article: any;
-}
-
-function ArticleCard({ article }: ArticleCardProps) {
+function ArticleCard({ article }: any) {
   const storeData = () => {
     sessionStorage.setItem("title", article.title);
     sessionStorage.setItem("description", article.description);
