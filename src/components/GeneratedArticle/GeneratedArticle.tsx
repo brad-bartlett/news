@@ -18,7 +18,7 @@ function GeneratedArticle({ title, description }: GeneratedArticleProps) {
       const article = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `write an original article about ${title} ${description}`,
-        temperature: 0.8,
+        temperature: 0.9,
         max_tokens: 800,
       });
       const articleResponse = article.data.choices[0].text as string;
