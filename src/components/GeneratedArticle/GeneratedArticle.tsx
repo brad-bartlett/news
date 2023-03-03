@@ -19,7 +19,7 @@ function GeneratedArticle({ title, description }: GeneratedArticleProps) {
         model: "text-davinci-003",
         prompt: `write an original article about ${title} ${description}`,
         temperature: 0.9,
-        max_tokens: 800,
+        max_tokens: 2000,
       });
       const articleResponse = article.data.choices[0].text as string;
       setGeneratedArticle(articleResponse);
