@@ -16,7 +16,7 @@ function GeneratedArticle({ title, description }: GeneratedArticleProps) {
       const openai = new OpenAIApi(configuration);
 
       const article = await openai.createCompletion({
-        model: "text-davinci-003",
+        model: "gpt-3.5-turbo",
         prompt: `write an original article, as if you are an expert in the field, about ${title} ${description}`,
         temperature: 0.7,
         max_tokens: 5000,
