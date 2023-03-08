@@ -16,10 +16,10 @@ function GeneratedArticle({ title, description }: GeneratedArticleProps) {
       const openai = new OpenAIApi(configuration);
 
       const article = await openai.createCompletion({
-        model: "gpt-3.5-turbo",
+        model: "text-davinci-003",
         prompt: `write an original article, as if you are an expert in the field, about ${title} ${description}`,
         temperature: 0.7,
-        max_tokens: 5000,
+        max_tokens: 1000,
       });
       const articleResponse = article.data.choices[0].text as string;
       setGeneratedArticle(articleResponse);
