@@ -1,15 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSetRecoilState } from "recoil";
+import { promptState } from "@/store/useStore";
 
 function ArticleCard({ article }: any) {
-  const storeData = () => {
-    sessionStorage.setItem("title", article.title);
-    sessionStorage.setItem("description", article.description);
+  const setPrompt = useSetRecoilState(promptState);
+
+  `write an original article, as if you are an expert journalist, about ${article.title} ${article.description}`;
+
+  const handleClick = () => {
+    setPrompt(
+      `write an original article, as if you are an expert journalist, about ${article.title} ${article.description}`
+    );
   };
   return (
     <div className="grid grid-flow-row auto-rows-min">
-      <Link onClick={storeData} href={`/articles/${article.title}`}>
+      <Link onClick={handleClick} href={`/articles/${article.title}`}>
         {article.urlToImage ? (
           <Image
             src={article.urlToImage}

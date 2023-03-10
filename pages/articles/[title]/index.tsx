@@ -2,16 +2,14 @@ import React from "react";
 import Header from "@/src/commons/Header";
 import PageWrapper from "@/src/commons/PageWrapper";
 import GeneratedArticle from "@/src/components/GeneratedArticle";
-
+import { useRecoilValue } from "recoil";
+import { promptState } from "@/store/useStore";
 function ArticlePage() {
-  const title = sessionStorage.getItem("title");
-  const description = sessionStorage.getItem("description");
+  const prompt = useRecoilValue(promptState);
   return (
     <PageWrapper>
       <Header text="Article Page" />
-      {title && description && (
-        <GeneratedArticle title={title} description={description} />
-      )}
+      {prompt && <GeneratedArticle prompt={prompt} />}
     </PageWrapper>
   );
 }
