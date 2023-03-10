@@ -7,8 +7,6 @@ import { promptState } from "@/store/useStore";
 function ArticleCard({ article }: any) {
   const setPrompt = useSetRecoilState(promptState);
 
-  `write an original article, as if you are an expert journalist, about ${article.title} ${article.description}`;
-
   const handleClick = () => {
     setPrompt(
       `write an original article, as if you are an expert journalist, about ${article.title} ${article.description}`
