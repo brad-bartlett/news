@@ -1,6 +1,3 @@
-import { atom } from "recoil";
+import { atom } from "jotai";
 
-export const promptState = atom({
-  key: "promptState",
-  default: "",
-});
+export const promptState = atom("");

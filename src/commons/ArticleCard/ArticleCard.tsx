@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useSetRecoilState } from "recoil";
+import { useAtom } from "jotai";
 import { promptState } from "@/store/useStore";
 
 function ArticleCard({ article }: any) {
-  const setPrompt = useSetRecoilState(promptState);
+  const [, setPrompt] = useAtom(promptState);
 
   const handleClick = () => {
     setPrompt(
