@@ -20,7 +20,7 @@ export async function getStaticProps() {
   if (!articles) {
     return {
       props: {
-        error: "No articles found",
+        error: "No articles found.",
       },
     };
   }
