@@ -21,7 +21,7 @@ function ArticleCard({ article }: any) {
             width={176}
             height={176}
             alt={article.title}
-            className="rounded-lg w-full h-48"
+            className="rounded-lg w-full h-44"
           />
         ) : (
           <Image
@@ -29,7 +29,7 @@ function ArticleCard({ article }: any) {
             width={176}
             height={176}
             alt={article.title}
-            className="rounded-lg w-full h-48"
+            className="rounded-lg w-full h-44"
           />
         )}
         <h2 className="text-lg font-bold text-ellipsis">{article.title}</h2>
