@@ -13,7 +13,6 @@ function GeneratedArticle({ prompt }: GeneratedArticleProps) {
         apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY,
       });
       const openai = new OpenAIApi(configuration);
-
       const article = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `${prompt}`,
