@@ -17,7 +17,7 @@ function GeneratedArticle({ prompt }: GeneratedArticleProps) {
         model: "text-davinci-003",
         prompt: `${prompt}`,
         temperature: 0.9,
-        max_tokens: 1000,
+        max_tokens: 15000,
       });
       const articleResponse = article.data.choices[0].text as string;
       setGeneratedArticle(articleResponse);
