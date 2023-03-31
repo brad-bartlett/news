@@ -22,7 +22,7 @@ function GeneratedArticle({ prompt }: GeneratedArticleProps) {
       const articleResponse = article.data.choices[0].text as string;
       setGeneratedArticle(articleResponse);
     } catch (error) {
-      console.error(`An error occurred while writing the story: ${error}`);
+      console.error(`An error occurred: ${error}`);
       return error;
     }
   }, [prompt]);
