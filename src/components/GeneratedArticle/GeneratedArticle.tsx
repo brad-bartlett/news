@@ -16,10 +16,11 @@ function GeneratedArticle({ prompt }: GeneratedArticleProps) {
       const article = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `${prompt}`,
-        temperature: 9.0,
-        max_tokens: 15000,
+        // temperature: 9.0,
+        max_tokens: 150,
       });
       const articleResponse = article.data.choices[0].text as string;
+      console.log({articleResponse})
       setGeneratedArticle(articleResponse);
     } catch (error) {
       console.error(`An error has occurred: ${error}`);
