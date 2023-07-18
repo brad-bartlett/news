@@ -10,6 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.7.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@next/font": "13.1.2",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -20,6 +23,7 @@
     "dotenv": "^16.0.3",
     "eslint": "^8.33.0",
     "eslint-config-next": "13.1.2",
+    "framer-motion": "^10.12.22",
     "jotai": "^2.0.3",
     "newsapi": "^2.4.1",
     "next": "13.1.2",
