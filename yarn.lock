@@ -336,6 +336,13 @@
     aria-hidden "^1.2.2"
     react-remove-scroll "^2.5.5"
 
+"@chakra-ui/next-js@^2.1.4":
+  version "2.1.4"
+  resolved "https://registry.npmjs.org/@chakra-ui/next-js/-/next-js-2.1.4.tgz"
+  integrity sha512-qPmpZSA6ONozcD8gC8fyuEPqweZqk1Y4ar/hbfUDLMdCCRsU+aigN6ay2HBBn3kPzzMOE6BUlkgvij8uB8smxQ==
+  dependencies:
+    "@emotion/cache" "^11.11.0"
+
 "@chakra-ui/number-input@2.0.19":
   version "2.0.19"
   resolved "https://registry.npmjs.org/@chakra-ui/number-input/-/number-input-2.0.19.tgz"
@@ -582,7 +589,7 @@
   dependencies:
     "@chakra-ui/utils" "2.0.15"
 
-"@chakra-ui/react@^2.7.1":
+"@chakra-ui/react@^2.7.1", "@chakra-ui/react@>=2.4.0":
   version "2.7.1"
   resolved "https://registry.npmjs.org/@chakra-ui/react/-/react-2.7.1.tgz"
   integrity sha512-uIYIAg+gnUoRbgdCfSEVvQnrEz0oWWXATGGSQpxmuJovNVyZKnX/Xug7NkWQfBUJPYRSG+VB69ZmsAFpyLSMtA==
@@ -914,7 +921,7 @@
   resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
-"@emotion/react@^11.0.0", "@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.11.1", "@emotion/react@>=10.0.35":
+"@emotion/react@^11.0.0", "@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.11.1", "@emotion/react@>=10.0.35", "@emotion/react@>=11":
   version "11.11.1"
   resolved "https://registry.npmjs.org/@emotion/react/-/react-11.11.1.tgz"
   integrity sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA==
@@ -2810,7 +2817,7 @@ newsapi@^2.4.1:
     core-js "^3.6.5"
     node-fetch "^2.6.0"
 
-next@13.1.2:
+next@>=13, next@13.1.2:
   version "13.1.2"
   resolved "https://registry.npmjs.org/next/-/next-13.1.2.tgz"
   integrity sha512-Rdnnb2YH///w78FEOR/IQ6TXga+qpth4OqFSem48ng1PYYKr6XBsIk1XVaRcIGM3o6iiHnun0nJvkJHDf+ICyQ==
